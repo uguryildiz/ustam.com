@@ -3,7 +3,7 @@ $mesaj = "Hoşgeldiniz";
 ?>
 <html>
 <head>
-    <title>Merhaba PHP</title>
+    <title>Merhaba MEHMET </title>
 </head>
 <body>
 <?php
