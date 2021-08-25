@@ -1,5 +1,6 @@
 <?php
 include "common/header.php";
+// Youm ekledim.
 ?>
 <!--================================
 =            Page Title            =
