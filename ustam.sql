@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 25 Ağu 2021, 14:17:32
+-- Üretim Zamanı: 26 Ağu 2021, 11:05:19
 -- Sunucu sürümü: 10.4.20-MariaDB
 -- PHP Sürümü: 8.0.9
 
@@ -53,15 +53,16 @@ CREATE TABLE `mesaj` (
   `gonderen` varchar(255) NOT NULL,
   `baslik` varchar(255) NOT NULL,
   `icerik` text NOT NULL,
-  `tarih` datetime NOT NULL DEFAULT current_timestamp()
+  `tarih` datetime NOT NULL DEFAULT current_timestamp(),
+  `dosya` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Tablo döküm verisi `mesaj`
 --
 
-INSERT INTO `mesaj` (`id`, `gonderen`, `baslik`, `icerik`, `tarih`) VALUES
-(2, 'Uğur YILDIZ', 'Test', 'Deneme Amaçlıdır.', '2021-08-24 14:37:39');
+INSERT INTO `mesaj` (`id`, `gonderen`, `baslik`, `icerik`, `tarih`, `dosya`) VALUES
+(4, 'sdvfdss', 'sdfdsfs', 'sdfdsfs', '2021-08-26 11:53:27', 'Ekran Alıntısı.PNG');
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -93,7 +94,7 @@ ALTER TABLE `kullanici`
 -- Tablo için AUTO_INCREMENT değeri `mesaj`
 --
 ALTER TABLE `mesaj`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
