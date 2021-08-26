@@ -68,11 +68,16 @@ include "common/header.php";
 				<h2 class="mb-5 text-center">Drop us a mail</h2>
 			</div>
 			<div class="col-12">
-				<form action="save.php" method="POST">
+				<form action="save.php" method="POST" enctype="multipart/form-data">
 					<div class="row">
 						<!-- Name -->
 						<div class="col-md-6 mb-2">
 							<input class="form-control main" type="text" name="gonderen" placeholder="Name" required>
+						</div>
+
+						<!-- Name -->
+						<div class="col-md-6 mb-2">
+							<input class="form-control main" type="file" name="fileToUpload" placeholder="Dosya seçiniz..." required>
 						</div>
 						
 						<!-- subject -->
@@ -85,7 +90,7 @@ include "common/header.php";
 						</div>
 						<!-- Submit Button -->
 						<div class="col-12 text-right">
-							<button class="btn btn-main-md">Submit</button>
+							<button  name="submit" class="btn btn-main-md">Submit</button>
 						</div>
 					</div>
 				</form>

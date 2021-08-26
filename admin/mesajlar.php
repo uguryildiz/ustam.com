@@ -328,11 +328,21 @@ include "../common/db.php";
                                                 <th>Gönderen</th>
                                                 <th>Başlık</th>
                                                 <th>Date</th>
+                                                <th>Görsel</th>
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <?php  
                                             if(isset($_GET['id'])){
+                                                // Dosya Silme
+                                                $sql = "SELECT dosya FROM mesaj WHERE id=".(int)$_GET['id'];
+                                                $sonuc = $conn->query($sql);
+                                                $satir = $sonuc->fetch_assoc();
+                                                $dosya = '../web/uploads/'.$satir['dosya'];
+                                                if(file_exists($dosya)){
+                                                    unlink($dosya);
+                                                }
+                                                //Kayıt silme    
                                                 $sql = "DELETE FROM mesaj WHERE id=".(int)$_GET['id'];
                                                 $sonuc = $conn->query($sql);
                                             }
@@ -347,6 +357,7 @@ include "../common/db.php";
                                                 <td><?= $satir['gonderen'] ?></td>
                                                 <td><?= $satir['baslik'] ?></td>
                                                 <td><?= $satir['tarih'] ?></td>
+                                                <td><img width="30" height="30" src="../web/uploads/<?= $satir['dosya'] ?>" /></td>
                                                 <td><a class="btn btn-danger" href="mesajlar.php?id=<?= $satir['id'] ?>">DELETE</a></td>
                                                 <td><a class="btn btn-info" href="mesajlar-update.php?id=<?= $satir['id'] ?>">UPDATE</a></td>
                                             </tr>
